@@ -273,7 +273,7 @@ int maildir_sync_message(struct Mailbox *m, int msgno)
 
     if (rename(mutt_b2s(oldpath), mutt_b2s(fullpath)) != 0)
     {
-      mutt_perror("rename");
+      /* mutt_perror("rename"); @hotfix - lets see */
       rc = -1;
       goto cleanup;
     }
